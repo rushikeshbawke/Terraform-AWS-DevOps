@@ -103,3 +103,27 @@ It can be able to multiple values.
   e.g. '''bash(terraform apply -var-file=myvars-1.tfvars -var-file=myvars-2.tfvars)
 - It's worth noting that variables defined in the command line options will have higher priority than the variables defined in the tfvars files.
 
+# Terraform Workspace
+Terraform worksapces is a very logical concept where you can have multiple states of your infrastructure configuration. To put this in simple words if you are running an infrastructure configuration in development environment then the same infrastructure can be run in the production environment.
+
+The main benefit of terraforming workspaces we get is we can have more than one state associated with a single terraform configuration.
+
+If you have not defined any workspace then there is always a default workspace created by terraform, so you always work in a default workspace of terraform. You can list the number of terraform workspaces by running the command terraform workspace show. Also, you can not delete the default workspace.
+
+$ terraform workspace list 
+It will list out all the workspaces
+
+$ terraform workspace new prod 
+It create a workspace and swtich to prod. Similary you can create
+
+$ terraform workspace new dev
+added new workspace dev
+
+$ terraform workspace show 
+It will show the current workspace you are in
+
+$ terraform apply -var-file dev.tfvars
+to  apply changes
+
+$terraform workspace select prod
+To Switch workspace
