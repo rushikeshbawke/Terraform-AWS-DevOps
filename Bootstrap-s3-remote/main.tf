@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "tf_state" {
   bucket = "rushi-tf-s3-bucket"
   force_destroy = true
 /*
-  at time of running this add this part. 
+  at time of running add this part. 
   i commented this now beacuse of lifecycle policy preventing it to get destroy.
   and you can remove above force_destroy line too.
 
