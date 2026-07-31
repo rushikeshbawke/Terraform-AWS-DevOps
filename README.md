@@ -20,6 +20,7 @@ Terraform is an open‑source Infrastructure as Code (IaC) tool created by Hashi
 ## Write Configuration
 1. You define infrastructure in .tf files using HCL (HashiCorp Configuration Language).
 2. This is declarative: you describe what you want, not how to build it.
+- [Demo-File](./Demo-File)
 
 ## Initialize 
 terraform init
@@ -76,6 +77,7 @@ They allow you to define a value once and reference it in multiple places throug
 6. Variables are useful for storing values that may change between environments, for example, different values for test and production environments.
 
 # Types of Terraform Variables
+- [Terraform-Variable](./Terraform-Variable)
 ## Simple Values variables
 As the name suggests Simple Values variables are which hold only a single value.
 1. string : Used for text values like names, IDs, or regions.
@@ -89,6 +91,7 @@ It can be able to multiple values.
 3. Set : A set is an unordered collection of unique values (no duplicates).
 
 ## Terraform Output Variables
+- [Terraform-Outputs](./Terraform-Outputs)
 -  In Terraform, output variables allow you to easily extract information about the resources that were created by Terraform. They allow you to easily reference the values of resources after Terraform has finished running.
 - Output variables are defined in the ***outputs*** block in the Terraform configuration file.
 - They also enable you to access the values of resources that are not directly visible in the Terraform state, such as the IP address of an EC2 instance.
@@ -104,6 +107,7 @@ It can be able to multiple values.
 - It's worth noting that variables defined in the command line options will have higher priority than the variables defined in the tfvars files.
 
 # Terraform Workspace
+- [Terraform-Workspace](./Terraform-Workspace)
 Terraform worksapces is a very logical concept where you can have multiple states of your infrastructure configuration. To put this in simple words if you are running an infrastructure configuration in development environment then the same infrastructure can be run in the production environment.
 
 The main benefit of terraforming workspaces we get is we can have more than one state associated with a single terraform configuration.
@@ -130,6 +134,7 @@ To Switch workspace
 
 
 # Terraform Modules
+- [Terraform-modules](./Terraform-modules)
 ## What Are Modules?
 
 1. A module is a container for multiple Terraform resources that are used together.
