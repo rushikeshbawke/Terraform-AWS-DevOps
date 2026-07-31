@@ -127,3 +127,42 @@ to  apply changes
 
 $terraform workspace select prod
 To Switch workspace
+
+
+# Terraform Modules
+## What Are Modules?
+
+1. A module is a container for multiple Terraform resources that are used together.
+
+2. Think of it as a reusable building block: instead of writing the same resource definitions repeatedly, you group them into a module and call it wherever needed.
+
+3. Every Terraform configuration has at least one module — the root module (your main .tf files).
+
+## Why Use Modules?
+1. Reusability → Define once, use many times (e.g., VPC, EC2, IAM roles).
+
+2. Organization → Break large configs into smaller, manageable pieces.
+
+3. Consistency → Apply the same standards across environments (dev, test, prod).
+
+4. Collaboration → Share modules across teams via GitHub, Terraform Registry, or private registries.
+
+# Terraform Modules Structure
+
+my-terraform-repo/
+├── main.tf              # Root entrypoint calling submodules & resources
+├── variables.tf         # Root variables (passed from terraform.tfvars or CLI)
+├── outputs.tf           # Final root outputs printed to the console
+├── providers.tf         # Cloud provider setups (AWS, Azure, etc.) & remote backend
+├── terraform.tfvars     # (DO NOT COMMIT SECRETS) Actual values for root variables
+│
+└── modules/             # Reusable sub-modules
+    ├── vpc/             # Module 1: VPC
+    │   ├── main.tf
+    │   ├── variables.tf # VPC-specific inputs
+    │   └── outputs.tf   # Returns vpc_id, subnet_ids, etc.
+    │
+    └── database/        # Module 2: Database
+        ├── main.tf
+        ├── variables.tf # DB-specific inputs
+        └── outputs.tf
