@@ -150,19 +150,19 @@ To Switch workspace
 # Terraform Modules Structure
 
 my-terraform-repo/
-├── main.tf              # Root entrypoint calling submodules & resources
-├── variables.tf         # Root variables (passed from terraform.tfvars or CLI)
-├── outputs.tf           # Final root outputs printed to the console
-├── providers.tf         # Cloud provider setups (AWS, Azure, etc.) & remote backend
-├── terraform.tfvars     # (DO NOT COMMIT SECRETS) Actual values for root variables
-│
-└── modules/             # Reusable sub-modules
-    ├── vpc/             # Module 1: VPC
-    │   ├── main.tf
-    │   ├── variables.tf # VPC-specific inputs
-    │   └── outputs.tf   # Returns vpc_id, subnet_ids, etc.
-    │
-    └── database/        # Module 2: Database
-        ├── main.tf
-        ├── variables.tf # DB-specific inputs
-        └── outputs.tf
+├── main.tf              # Root entrypoint calling submodules & resources  
+├── variables.tf         # Root variables (passed from terraform.tfvars or CLI)  
+├── outputs.tf           # Final root outputs printed to the console  
+├── providers.tf         # Cloud provider setups (AWS, Azure, etc.) & remote backend  
+├── terraform.tfvars     # (DO NOT COMMIT SECRETS) Actual values for root variables  
+│  
+└── modules/             # Reusable sub-modules  
+    ├── vpc/             # Module 1: VPC  
+    │   ├── main.tf  
+    │   ├── variables.tf # VPC-specific inputs  
+    │   └── outputs.tf   # Returns vpc_id, subnet_ids, etc.  
+    │  
+    └── database/        # Module 2: Database  
+        ├── main.tf  
+        ├── variables.tf # DB-specific inputs  
+        └── outputs.tf  
