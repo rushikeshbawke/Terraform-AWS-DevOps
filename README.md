@@ -1,6 +1,6 @@
 ## About
 As a AWS DevOps Engineer / Site Reliability, I use Terraform to automate cloud infrastructure. 
-This portfolio highlights reusable `.tf` files, modules, and real-world scenarios like VPC setups, EC2 provisioning, and CI/CD pipelines.
+This portfolio highlights reusable `.tf` files and modules.
 
 
 # What is Terraform?
@@ -66,6 +66,7 @@ terraform destroy
 3. Also updates the state file to reflect that resources no longer exist.
 
 # Terraform Variables
+- [Terraform-Variable](./Terraform-Variable)   
 Terraform variables are a way to store values that can be reused throughout your Terraform configuration.
 They allow you to define a value once and reference it in multiple places throughout your configuration, making it easier to manage and update your infrastructure.
 
@@ -77,7 +78,6 @@ They allow you to define a value once and reference it in multiple places throug
 6. Variables are useful for storing values that may change between environments, for example, different values for test and production environments.
 
 # Types of Terraform Variables
-- [Terraform-Variable](./Terraform-Variable)
 ## Simple Values variables
 As the name suggests Simple Values variables are which hold only a single value.
 1. string : Used for text values like names, IDs, or regions.
@@ -107,7 +107,7 @@ It can be able to multiple values.
 - It's worth noting that variables defined in the command line options will have higher priority than the variables defined in the tfvars files.
 
 # Terraform Workspace
-- [Terraform-Workspace](./Terraform-Workspace)
+- [Terraform-Workspace](./Terraform-Workspace)   
 Terraform worksapces is a very logical concept where you can have multiple states of your infrastructure configuration. To put this in simple words if you are running an infrastructure configuration in development environment then the same infrastructure can be run in the production environment.
 
 The main benefit of terraforming workspaces we get is we can have more than one state associated with a single terraform configuration.
